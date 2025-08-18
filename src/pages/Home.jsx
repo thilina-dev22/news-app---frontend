@@ -8,7 +8,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const getAllNews = async () => {
+  const fetchAllNews = async () => {
     try {
       setLoading(true);
       const response = await fetch("http://localhost:5000/api/news");
@@ -25,7 +25,7 @@ const Home = () => {
   };
 
   useEffect(() => {
-    getAllNews();
+    fetchAllNews();
   }, []);
 
   return (
